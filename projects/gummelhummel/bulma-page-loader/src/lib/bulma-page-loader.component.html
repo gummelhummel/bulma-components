@@ -1,0 +1,4 @@
+<div
+    [ngClass]="{'pageloader': true, 'is-active': bulmaPageLoaderService.visible, 'is-primary': bulmaPageLoaderService.color === 0, 'is-link': bulmaPageLoaderService.color === 1, 'is-info': bulmaPageLoaderService.color === 2, 'is-success': bulmaPageLoaderService.color === 3, 'is-warning': bulmaPageLoaderService.color === 4, 'is-danger': bulmaPageLoaderService.color === 5}">
+    <span class="title">{{ bulmaPageLoaderService.message }}</span>
+</div>

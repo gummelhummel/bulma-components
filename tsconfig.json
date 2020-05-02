@@ -14,7 +14,17 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@gummelhummel/bulma-page-loader": [
+        "dist/gummelhummel/bulma-page-loader/gummelhummel-bulma-page-loader",
+        "dist/gummelhummel/bulma-page-loader"
+      ],
+      "@gummelhummel/bulma-toast": [
+        "dist/gummelhummel/bulma-toast/gummelhummel-bulma-toast",
+        "dist/gummelhummel/bulma-toast"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
