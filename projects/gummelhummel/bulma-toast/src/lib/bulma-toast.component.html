@@ -1,0 +1,10 @@
+<div class="bulma-toast-list">
+    <ng-container *ngFor="let toast of bulmaToastService.toasts">
+        <div *ngIf="toast.visible" [@slideInRightOnEnter] [@slideOutRightOnLeave]
+            [ngClass]="{'bulma-toast notification': true, 'is-primary': toast.color === 0, 'is-link': toast.color === 1, 'is-info': toast.color === 2, 'is-success': toast.color === 3, 'is-warning': toast.color === 4, 'is-danger': toast.color === 5}">
+            <button (click)="bulmaToastService.hide(toast)" class="delete"></button>
+            <p class="is-size-5">{{ toast?.headline }}</p>
+            {{ toast?.message }}
+        </div>
+    </ng-container>
+</div>

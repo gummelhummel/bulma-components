@@ -1,0 +1,13 @@
+.bulma-toast-list {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 10001;
+    width: 25rem;
+    max-width: 25rem;
+    min-width: 25rem;
+}
+
+.bulma-toast{
+    margin: 1.25rem;
+}
