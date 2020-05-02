@@ -23,6 +23,10 @@
       "@gummelhummel/bulma-toast": [
         "dist/gummelhummel/bulma-toast/gummelhummel-bulma-toast",
         "dist/gummelhummel/bulma-toast"
+      ],
+      "@gummelhummel/mdi-icon": [
+        "dist/gummelhummel/mdi-icon/gummelhummel-mdi-icon",
+        "dist/gummelhummel/mdi-icon"
       ]
     }
   },
