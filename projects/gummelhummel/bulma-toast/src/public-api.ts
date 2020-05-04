@@ -7,4 +7,5 @@ export * from './lib/bulma-toast.module';
 export * from './lib/bulma-color.enum';
 export * from './lib/bulma-toast.interface';
 export * from './lib/bulma-toast.component';
-
+export * from './lib/bulma-toast-configuration';
+export * from './lib/bulma-toast-position.enum';

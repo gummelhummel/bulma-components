@@ -1,19 +1,28 @@
 import { Injectable } from '@angular/core';
 import { BulmaToast } from './bulma-toast.interface';
+import { BulmaToastPosition } from './bulma-toast-position.enum';
+import { BulmaToastConfiguration } from './bulma-toast-configuration';
 
 @Injectable()
 export class BulmaToastService {
 
   // tslint:disable-next-line: variable-name
   private _toasts: BulmaToast[];
+  // tslint:disable-next-line: variable-name
+  private _position: BulmaToastPosition;
 
-  constructor() {
+  constructor(private readonly bulmaToastConfiguration: BulmaToastConfiguration) {
+    this._position = bulmaToastConfiguration.position || BulmaToastPosition.LEFT_BOTTOM;
     this._toasts = [];
     this.reduceToasts();
   }
 
   get toasts(): BulmaToast[] {
     return this._toasts;
+  }
+
+  get position(): BulmaToastPosition {
+    return this._position;
   }
 
   show(toast: BulmaToast): void {

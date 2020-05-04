@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { BulmaToastService } from './bulma-toast.service';
-import { slideInRightOnEnterAnimation, slideOutRightOnLeaveAnimation } from 'angular-animations';
+import {
+  slideInRightOnEnterAnimation,
+  slideOutRightOnLeaveAnimation,
+  slideInLeftOnEnterAnimation,
+  slideOutLeftOnLeaveAnimation
+} from 'angular-animations';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -10,6 +15,8 @@ import { slideInRightOnEnterAnimation, slideOutRightOnLeaveAnimation } from 'ang
   animations: [
     slideInRightOnEnterAnimation(),
     slideOutRightOnLeaveAnimation(),
+    slideInLeftOnEnterAnimation(),
+    slideOutLeftOnLeaveAnimation(),
   ]
 })
 export class BulmaToastComponent {

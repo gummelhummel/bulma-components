@@ -1,7 +1,24 @@
-.bulma-toast-list {
+.left-top {
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.right-top {
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+.right-bottom {
     position: fixed;
     right: 0;
     bottom: 0;
+}
+.left-bottom {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+.toast-list {
     z-index: 10001;
     width: 25rem;
     max-width: 25rem;
