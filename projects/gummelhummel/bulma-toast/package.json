@@ -1,6 +1,6 @@
 {
   "name": "@gummelhummel/bulma-toast",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "peerDependencies": {
     "@angular/common": "^9.0.7",
     "@angular/core": "^9.0.7",
