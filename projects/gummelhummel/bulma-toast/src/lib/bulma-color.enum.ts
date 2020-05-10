@@ -1,8 +1,8 @@
 export enum BulmaColor {
-    PRIMARY,
-    LINK,
-    INFO,
-    SUCCESS,
-    WARNING,
-    DANGER
+    PRIMARY = 'is-primary',
+    LINK = 'is-link',
+    INFO = 'is-info',
+    SUCCESS = 'is-success',
+    WARNING = 'is-warning',
+    DANGER = 'is-danger'
 }

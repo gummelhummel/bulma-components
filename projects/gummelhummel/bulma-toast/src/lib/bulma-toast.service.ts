@@ -12,40 +12,46 @@ export class BulmaToastService {
   private _position: BulmaToastPosition;
 
   constructor(private readonly bulmaToastConfiguration: BulmaToastConfiguration) {
-    this._position = bulmaToastConfiguration.position || BulmaToastPosition.LEFT_BOTTOM;
+    this._position = bulmaToastConfiguration.position || BulmaToastPosition.RIGHT_BOTTOM;
     this._toasts = [];
     this.reduceToasts();
   }
 
-  get toasts(): BulmaToast[] {
+  public get toasts(): BulmaToast[] {
     return this._toasts;
   }
 
-  get position(): BulmaToastPosition {
+  public get position(): BulmaToastPosition {
     return this._position;
   }
 
-  show(toast: BulmaToast): void {
+  public show(toast: BulmaToast): void {
+    this.reduceToasts();
     this._toasts.push({ visible: true, ...toast });
   }
 
-  hide(toastToHide: BulmaToast): void {
+  public hide(toastToHide: BulmaToast): void {
     toastToHide.visible = false;
     setTimeout(() => this._toasts = this._toasts.filter(toast => toast !== toastToHide), 1000);
   }
 
   private reduceToasts(): void {
-    setTimeout(() => {
-      for (const toast of this._toasts) {
-        if (toast.time !== Infinity && toast.time >= 0) {
-          toast.time -= 100;
-          if (toast.time <= 0) {
-            this.hide(toast);
+    if (
+      this._toasts.length > 0 &&
+      this._toasts.some(t => t.time >= 0 && t.time !== Infinity)
+    ) {
+      setTimeout(() => {
+        for (const toast of this._toasts) {
+          if (toast.time !== Infinity && toast.time >= 0) {
+            toast.time -= 100;
+            if (toast.time <= 0) {
+              this.hide(toast);
+            }
           }
         }
-      }
-      this.reduceToasts();
-    }, 100);
+        this.reduceToasts();
+      }, 100);
+    }
   }
 
 }

@@ -1,20 +1,20 @@
-<div class="bulma-toast-list">
+<div [ngClass]="'bulma-toast-list ' + bulmaToastService.position">
     <ng-container *ngFor="let toast of bulmaToastService.toasts">
-        <ng-template *ngIf="bulmaToastService.position <= 1; else leftToast">
-            <div *ngIf="toast.visible" [@slideInRightOnEnter] [@slideOutRightOnLeave]
-                [ngClass]="{'bulma-toast notification': true, 'is-primary': toast.color === 0, 'is-link': toast.color === 1, 'is-info': toast.color === 2, 'is-success': toast.color === 3, 'is-warning': toast.color === 4, 'is-danger': toast.color === 5}">
+        <div *ngIf="toast.visible && bulmaToastService.position.includes('right')" [@slideInRightOnEnter]
+            [@slideOutRightOnLeave]>
+            <div [ngClass]="'bulma-toast notification ' + toast.color">
                 <button (click)="bulmaToastService.hide(toast)" class="delete"></button>
                 <p class="is-size-5">{{ toast?.headline }}</p>
                 {{ toast?.message }}
             </div>
-        </ng-template>
-        <ng-template #leftToast>
-            <div *ngIf="toast.visible" [@slideInRightOnEnter] [@slideOutRightOnLeave]
-                [ngClass]="{'bulma-toast notification': true, 'is-primary': toast.color === 0, 'is-link': toast.color === 1, 'is-info': toast.color === 2, 'is-success': toast.color === 3, 'is-warning': toast.color === 4, 'is-danger': toast.color === 5}">
+        </div>
+        <div *ngIf="toast.visible && bulmaToastService.position.includes('left')" [@slideInLeftOnEnter]
+            [@slideOutLeftOnLeave]>
+            <div [ngClass]="'bulma-toast notification ' + toast.color">
                 <button (click)="bulmaToastService.hide(toast)" class="delete"></button>
                 <p class="is-size-5">{{ toast?.headline }}</p>
                 {{ toast?.message }}
             </div>
-        </ng-template>
+        </div>
     </ng-container>
 </div>
