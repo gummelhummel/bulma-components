@@ -3,5 +3,9 @@
   "dest": "../../../dist/gummelhummel/bulma-page-loader",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "tslib",
+    "bulma-pageloader"
+  ]
 }
