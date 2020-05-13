@@ -122,6 +122,46 @@
           }
         }
       }
+    },
+    "@gummelhummel/bulma-tooltip": {
+      "projectType": "library",
+      "root": "projects/gummelhummel/bulma-tooltip",
+      "sourceRoot": "projects/gummelhummel/bulma-tooltip/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/gummelhummel/bulma-tooltip/tsconfig.lib.json",
+            "project": "projects/gummelhummel/bulma-tooltip/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/gummelhummel/bulma-tooltip/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/gummelhummel/bulma-tooltip/src/test.ts",
+            "tsConfig": "projects/gummelhummel/bulma-tooltip/tsconfig.spec.json",
+            "karmaConfig": "projects/gummelhummel/bulma-tooltip/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/gummelhummel/bulma-tooltip/tsconfig.lib.json",
+              "projects/gummelhummel/bulma-tooltip/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "@gummelhummel/bulma-page-loader"
 }

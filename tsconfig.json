@@ -27,6 +27,10 @@
       "@gummelhummel/mdi-icon": [
         "dist/gummelhummel/mdi-icon/gummelhummel-mdi-icon",
         "dist/gummelhummel/mdi-icon"
+      ],
+      "@gummelhummel/bulma-tooltip": [
+        "dist/gummelhummel/bulma-tooltip/gummelhummel-bulma-tooltip",
+        "dist/gummelhummel/bulma-tooltip"
       ]
     }
   },
